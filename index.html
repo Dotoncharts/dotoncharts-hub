@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="description" content="Doton Charts — chart education with receipts, not hype. Start the 7-day challenge, see the 5,130 backtests, watch the reels." />
+    <link rel="icon" href="data:," />
+    <title>Doton Charts — Links</title>
+    <style>
+      :root {
+        --navy: #0a0e27;
+        --navy-deep: #060818;
+        --panel: rgba(19, 24, 54, 0.58);
+        --panel-solid: #111633;
+        --stroke: rgba(255, 255, 255, 0.09);
+        --stroke-hi: rgba(0, 230, 118, 0.45);
+        --green: #00e676;
+        --green-dim: #00c853;
+        --red: #ff5252;
+        --ink: #f4f6ff;
+        --ink-2: #a7aed0;
+        --ink-3: #6d76a0;
+        --radius-lg: 26px;
+        --radius-md: 20px;
+        --radius-sm: 12px;
+        color-scheme: dark;
+      }
+      * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--navy-deep);
+        color: var(--ink);
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+          "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        overflow-x: hidden;
+      }
+      a { color: inherit; text-decoration: none; }
+      img { display: block; }
+      :focus-visible { outline: 2px solid var(--green); outline-offset: 3px; border-radius: 6px; }
+
+      /* ---------- ambient background ---------- */
+      .bg { position: fixed; inset: 0; z-index: -2; background:
+          radial-gradient(720px 480px at 50% -120px, rgba(0, 230, 118, 0.16), rgba(0, 230, 118, 0) 62%),
+          radial-gradient(900px 620px at 88% 110%, rgba(38, 64, 180, 0.20), rgba(38, 64, 180, 0) 60%),
+          linear-gradient(180deg, #0a0e27 0%, #070a20 55%, #05060f 100%);
+      }
+      .bg::after { content: ""; position: absolute; inset: 0;
+        background:
+          repeating-linear-gradient(0deg, rgba(140, 160, 255, 0.05) 0 1px, transparent 1px 46px),
+          repeating-linear-gradient(90deg, rgba(140, 160, 255, 0.05) 0 1px, transparent 1px 46px);
+        mask-image: linear-gradient(180deg, rgba(0,0,0,0.85), rgba(0,0,0,0.25) 60%, transparent);
+        -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,0.85), rgba(0,0,0,0.25) 60%, transparent);
+      }
+
+      .wrap { max-width: 580px; margin: 0 auto; padding: max(28px, env(safe-area-inset-top)) 20px calc(40px + env(safe-area-inset-bottom)); }
+
+      /* ---------- entrance ---------- */
+      .rise { opacity: 0; transform: translateY(18px); transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); transition-delay: var(--d, 0ms); }
+      .rise.in { opacity: 1; transform: none; }
+
+      /* ---------- hero ---------- */
+      .hero { text-align: center; padding: 18px 4px 6px; }
+      .avatar-ring { width: 112px; height: 112px; margin: 0 auto; border-radius: 50%; padding: 3px;
+        background: conic-gradient(from 210deg, var(--green), #19f0c8 38%, #2f6bff 72%, var(--green));
+        box-shadow: 0 0 0 1px rgba(0, 230, 118, 0.18), 0 18px 44px rgba(0, 0, 0, 0.55), 0 0 42px rgba(0, 230, 118, 0.22);
+      }
+      .avatar-ring img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 3px solid var(--navy); }
+      .hero h1 { margin: 20px 0 0; font-size: 36px; line-height: 1.05; font-weight: 800; letter-spacing: -0.022em; }
+      .handle { margin-top: 7px; font-size: 15px; font-weight: 600; color: var(--green); letter-spacing: 0.01em; }
+      .tagline { margin: 10px auto 0; max-width: 400px; font-size: 16.5px; line-height: 1.45; color: var(--ink-2); }
+      .tagline b { color: var(--ink); font-weight: 650; }
+
+      .hero-stat { margin-top: 34px; }
+      .hero-num { font-size: clamp(76px, 22vw, 104px); line-height: 0.95; font-weight: 800; letter-spacing: -0.035em;
+        font-variant-numeric: tabular-nums; color: var(--ink); }
+      .hero-num .unit { color: var(--green); }
+      .hero-cap { margin: 10px auto 0; max-width: 430px; font-size: 17px; line-height: 1.45; color: var(--ink-2); }
+      .hero-cap b { color: var(--ink); font-weight: 650; }
+      .chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 18px; }
+      .chip { font-size: 12.5px; font-weight: 600; letter-spacing: 0.02em; color: var(--ink);
+        background: rgba(255, 255, 255, 0.05); border: 1px solid var(--stroke);
+        padding: 7px 12px; border-radius: 999px; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+      .chip em { font-style: normal; color: var(--green); }
+
+      .cta-row { display: flex; gap: 10px; margin-top: 26px; }
+      .btn { flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+        min-height: 54px; padding: 14px 18px; border-radius: 16px; font-size: 16px; font-weight: 700; letter-spacing: -0.01em;
+        transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease; }
+      .btn:active { transform: scale(0.965); }
+      .btn-primary { background: linear-gradient(180deg, #1bee85, var(--green-dim)); color: #03130a;
+        box-shadow: 0 10px 28px rgba(0, 230, 118, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.35); }
+      .btn-primary:hover { box-shadow: 0 14px 34px rgba(0, 230, 118, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.35); }
+      .btn-ghost { background: var(--panel); border: 1px solid var(--stroke); color: var(--ink);
+        backdrop-filter: blur(14px) saturate(140%); -webkit-backdrop-filter: blur(14px) saturate(140%); }
+      .btn-ghost:hover { border-color: var(--stroke-hi); }
+      .btn svg { flex: none; }
+
+      /* ---------- cards ---------- */
+      .stack { display: grid; gap: 14px; margin-top: 34px; }
+      .card { position: relative; display: block; background: var(--panel); border: 1px solid var(--stroke);
+        border-radius: var(--radius-lg); overflow: hidden;
+        backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%);
+        box-shadow: 0 16px 40px rgba(2, 4, 16, 0.45);
+        transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.25s ease, box-shadow 0.3s ease; }
+      .card:hover { transform: translateY(-3px); border-color: rgba(0, 230, 118, 0.35); box-shadow: 0 22px 48px rgba(2, 4, 16, 0.55); }
+      .card:active { transform: scale(0.985); }
+      .card .media { overflow: hidden; }
+      .card .media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
+      .card:hover .media img { transform: scale(1.045); }
+
+      .badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700;
+        letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); }
+      .badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--green);
+        box-shadow: 0 0 8px rgba(0, 230, 118, 0.9); }
+      .card h2 { margin: 8px 0 0; font-size: 23px; line-height: 1.16; font-weight: 750; letter-spacing: -0.018em; }
+      .card p { margin: 7px 0 0; font-size: 14.5px; line-height: 1.5; color: var(--ink-2); }
+      .go { position: absolute; top: 16px; right: 16px; width: 34px; height: 34px; border-radius: 50%;
+        display: grid; place-items: center; color: #03130a; background: var(--green);
+        box-shadow: 0 6px 18px rgba(0, 230, 118, 0.35); transition: transform 0.22s ease; }
+      .card:hover .go { transform: translate(2px, -2px); }
+
+      /* featured challenge card */
+      .feat .media { aspect-ratio: 16 / 9.6; }
+      .feat .media img { object-position: center 12%; }
+      .feat .body { padding: 18px 20px 20px; }
+      .days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-top: 16px; }
+      .day { text-align: center; min-width: 0; }
+      .day .dimg { aspect-ratio: 1 / 1; border-radius: 9px; overflow: hidden; border: 1px solid var(--stroke); }
+      .day .dimg img { width: 100%; height: 100%; object-fit: cover; }
+      .day span { display: block; margin-top: 5px; font-size: 9px; font-weight: 700; letter-spacing: 0.12em; color: var(--ink-3); }
+      .day.hot span { color: var(--green); }
+
+      /* media rows */
+      .row { display: flex; gap: 16px; align-items: center; padding: 14px; border-radius: var(--radius-md); }
+      .row .thumb { flex: none; width: 78px; height: 104px; border-radius: 14px; }
+      .row .thumb.sq { height: 78px; border-radius: 14px; }
+      .row .txt { min-width: 0; padding-right: 30px; }
+      .row h2 { font-size: 19px; }
+      .row p { font-size: 13.5px; }
+      .play { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); width: 40px; height: 40px;
+        border-radius: 50%; display: grid; place-items: center; color: var(--green);
+        background: rgba(0, 230, 118, 0.1); border: 1px solid rgba(0, 230, 118, 0.35);
+        transition: background 0.25s ease, transform 0.22s ease; }
+      .card:hover .play { background: rgba(0, 230, 118, 0.2); transform: translateY(-50%) scale(1.08); }
+      .chev { position: absolute; right: 18px; top: 50%; transform: translateY(-50%); color: var(--ink-3); transition: transform 0.22s ease, color 0.22s ease; }
+      .card:hover .chev { transform: translate(3px, -50%); color: var(--green); }
+
+      /* pdf rows */
+      .row .thumb.pdfbox { display: grid; place-items: center; height: 78px;
+        background: rgba(0, 230, 118, 0.08); border: 1px solid rgba(0, 230, 118, 0.22);
+        color: var(--green); font-size: 13px; font-weight: 800; letter-spacing: 0.1em; }
+      .section-cap { margin: 34px 2px 0; font-size: 12px; font-weight: 700; letter-spacing: 0.16em;
+        text-transform: uppercase; color: var(--ink-3); }
+      .vault { border-color: rgba(0, 230, 118, 0.35); }
+      .vault .body { padding: 20px; }
+      .vault h2 { margin-top: 8px; }
+
+      /* ---------- footer ---------- */
+      footer { margin-top: 40px; text-align: center; }
+      .sig { font-size: 15px; font-weight: 650; color: var(--ink); }
+      .sig .dot { color: var(--green); }
+      .fine { margin-top: 8px; font-size: 12px; line-height: 1.55; color: var(--ink-3); }
+
+      @media (max-width: 420px) {
+        .cta-row { flex-direction: column; }
+        .hero h1 { font-size: 32px; }
+        .row .txt { padding-right: 44px; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .rise { opacity: 1; transform: none; transition: none; }
+        .card, .card .media img, .btn { transition: none; }
+        .card:hover { transform: none; }
+        .card:active { transform: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg" aria-hidden="true"></div>
+
+    <main class="wrap">
+      <!-- ================= HERO ================= -->
+      <header class="hero">
+        <div class="avatar-ring rise" style="--d:0ms">
+          <img src="assets/pfp.jpg" alt="Doton Charts logo — a bold neon-green 3D letter D with candlestick texture, ringed on a dark navy background" width="440" height="440" />
+        </div>
+        <h1 class="rise" style="--d:60ms">Doton Charts</h1>
+        <div class="handle rise" style="--d:110ms">@dotoncharts</div>
+        <p class="tagline rise" style="--d:160ms">Chart education with <b>receipts, not hype</b>. Every claim on this page was tested before it was posted.</p>
+
+        <div class="hero-stat rise" style="--d:230ms">
+          <div class="hero-num"><span id="count">5,130</span><span class="unit">.</span></div>
+          <p class="hero-cap">strategies backtested across five stocks and five years — <b>and doing nothing beat almost all of them.</b></p>
+          <div class="chips">
+            <span class="chip"><em>21</em>&nbsp; beat buy-and-hold</span>
+            <span class="chip"><em>0.4%</em>&nbsp; of everything tested</span>
+            <span class="chip">SPY · QQQ · NVDA · AAPL · TSLA</span>
+          </div>
+        </div>
+
+        <div class="cta-row rise" style="--d:300ms">
+          <a class="btn btn-primary" href="https://www.instagram.com/dotoncharts/">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="0.6" fill="currentColor" stroke="none"/></svg>
+            Follow on Instagram
+          </a>
+          <a class="btn btn-ghost" href="https://www.instagram.com/dotoncharts/reels/">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.6v12.8c0 .9 1 1.5 1.8 1L20 13a1.2 1.2 0 0 0 0-2L9.8 4.6C9 4.1 8 4.7 8 5.6Z"/></svg>
+            Watch the reels
+          </a>
+        </div>
+      </header>
+
+      <!-- ================= LINK CARDS ================= -->
+      <div class="stack">
+        <!-- ================================================================
+             EMAIL SIGNUP SLOT (Track 2 — Kit "The Backtest Vault")
+             Kit went live Oct 21, 2026: this card points to the Kit
+             landing page. The five breakdowns stay hosted on this same
+             site under /pdfs/ (section below) so ManyChat links never break.
+             ================================================================ -->
+        <a class="card vault rise" style="--d:60ms" href="https://doton-charts.kit.com/6ba3f23e2e" aria-label="Get the free Backtest Vault — all five breakdown PDFs">
+          <span class="go" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </span>
+          <div class="body">
+            <span class="badge">Free · The Backtest Vault</span>
+            <h2>All 5 Backtest Breakdowns — Free</h2>
+            <p>The full receipts behind the reels, as PDFs — the 16% breakdown, the 5,130-test report, and the win-rate myth, all in one vault. Join the list and the vault is yours — one honest email a week.</p>
+          </div>
+        </a>
+
+        <a class="card feat rise" style="--d:80ms" href="https://www.instagram.com/dotoncharts/" aria-label="Start the 7-Day Chart Challenge on Instagram">
+          <div class="media">
+            <img src="assets/challenge-day1.jpg" alt="Day 1 of the challenge: a neon green and a neon red candlestick, labelled wick and body" width="880" height="880" />
+          </div>
+          <span class="go" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </span>
+          <div class="body">
+            <span class="badge">Start here · Free</span>
+            <h2>The 7-Day Chart Challenge</h2>
+            <p>New to charts? One micro-lesson a day — candlesticks, bulls vs bears, support &amp; resistance, your first paper trade, and the 1% rule. Seven days from “what is a candle?” to reading a chart on your own.</p>
+            <div class="days" aria-hidden="true">
+              <div class="day hot"><div class="dimg"><img src="assets/day1.jpg" alt="" width="220" height="220" loading="lazy" /></div><span>Day 1</span></div>
+              <div class="day"><div class="dimg"><img src="assets/day2.jpg" alt="" width="220" height="220" loading="lazy" /></div><span>Day 2</span></div>
+              <div class="day"><div class="dimg"><img src="assets/day3.jpg" alt="" width="220" height="220" loading="lazy" /></div><span>Day 3</span></div>
+              <div class="day"><div class="dimg"><img src="assets/day4.jpg" alt="" width="220" height="220" loading="lazy" /></div><span>Day 4</span></div>
+              <div class="day"><div class="dimg"><img src="assets/day5.jpg" alt="" width="220" height="220" loading="lazy" /></div><span>Day 5</span></div>
+              <div class="day"><div class="dimg"><img src="assets/day6.jpg" alt="" width="220" height="220" loading="lazy" /></div><span>Day 6</span></div>
+              <div class="day"><div class="dimg"><img src="assets/day7.jpg" alt="" width="220" height="220" loading="lazy" /></div><span>Day 7</span></div>
+            </div>
+          </div>
+        </a>
+
+        <a class="card row rise" style="--d:140ms" href="https://www.instagram.com/reel/DenVcoWjk51/" aria-label="Watch Backtest Lab episode 1 on Instagram">
+          <div class="media thumb">
+            <img src="assets/backtest-ep1.jpg" alt="Backtest Lab cover: 0.4% of 5,130 strategies beat buy-and-hold" width="720" height="1280" loading="lazy" />
+          </div>
+          <div class="txt">
+            <span class="badge">Backtest Lab · Ep 1</span>
+            <h2>5,130 Backtests. Doing Nothing Won.</h2>
+            <p>Moving averages, RSI, candlestick patterns — 5,130 variants tested, then re-tested on two years they'd never seen. Only 21 survived.</p>
+          </div>
+          <span class="play" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.6v12.8c0 .9 1 1.5 1.8 1L20 13a1.2 1.2 0 0 0 0-2L9.8 4.6C9 4.1 8 4.7 8 5.6Z"/></svg>
+          </span>
+        </a>
+
+        <a class="card row rise" style="--d:180ms" href="https://www.instagram.com/reel/DenVYbPjoHv/" aria-label="Watch Backtest Lab episode 2 on Instagram">
+          <div class="media thumb">
+            <img src="assets/backtest-ep2.jpg" alt="Backtest Lab episode 2 cover: 31 percent of strategies made money on Tesla, 88 percent on Apple" width="720" height="1280" loading="lazy" />
+          </div>
+          <div class="txt">
+            <span class="badge">Backtest Lab · Ep 2</span>
+            <h2>Same Strategies. Opposite Results.</h2>
+            <p>The same 5,130 strategies, same years, same rules — only 31% made money on Tesla, while 88% made money on Apple. It's not the strategy. It's the stock.</p>
+          </div>
+          <span class="play" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.6v12.8c0 .9 1 1.5 1.8 1L20 13a1.2 1.2 0 0 0 0-2L9.8 4.6C9 4.1 8 4.7 8 5.6Z"/></svg>
+          </span>
+        </a>
+
+        <a class="card row rise" style="--d:220ms" href="https://www.instagram.com/reel/DenVh4lDkkh/" aria-label="Watch the 16 percent reel on Instagram">
+          <div class="media thumb">
+            <img src="assets/ai-debt.jpg" alt="Reel cover: 16 percent — the number that matters" width="720" height="1280" loading="lazy" />
+          </div>
+          <div class="txt">
+            <span class="badge">The 16% Reel</span>
+            <h2>The Number That Matters</h2>
+            <p>Lenders charge more when they're scared — and one number gives them away. Debt doesn't believe stories. It believes math.</p>
+          </div>
+          <span class="play" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.6v12.8c0 .9 1 1.5 1.8 1L20 13a1.2 1.2 0 0 0 0-2L9.8 4.6C9 4.1 8 4.7 8 5.6Z"/></svg>
+          </span>
+        </a>
+
+        <a class="card row rise" style="--d:240ms" href="https://www.instagram.com/reel/Deo-c3wI7Ys/" aria-label="Watch AI Credit Part 2 on Instagram">
+          <div class="media thumb">
+            <img src="assets/ai-credit-part2.jpg" alt="AI Credit Part 2 cover: the bill comes due — $51B of debt at 16 percent" width="720" height="1280" loading="lazy" />
+          </div>
+          <div class="txt">
+            <span class="badge">AI Credit · Part 2</span>
+            <h2>The Bill Comes Due</h2>
+            <p>$51 billion of AI debt is coming due. Borrow it again at 16% and that's $8 billion a year — in interest alone. Debt believes math, not stories.</p>
+          </div>
+          <span class="play" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.6v12.8c0 .9 1 1.5 1.8 1L20 13a1.2 1.2 0 0 0 0-2L9.8 4.6C9 4.1 8 4.7 8 5.6Z"/></svg>
+          </span>
+        </a>
+
+        <a class="card row rise" style="--d:260ms" href="https://www.instagram.com/dotoncharts/" aria-label="Read the 7 Laws from 8 Pro Traders carousel on Instagram">
+          <div class="media thumb sq">
+            <img src="assets/laws.jpg" alt="Carousel cover: 7 Laws from 8 Pro Traders" width="880" height="880" loading="lazy" />
+          </div>
+          <div class="txt">
+            <span class="badge">Carousel · 10 slides</span>
+            <h2>7 Laws from 8 Pro Traders</h2>
+            <p>Eight pros were asked one question: what do you actually do every day? Every single one agreed on these seven.</p>
+          </div>
+          <span class="chev" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"/></svg>
+          </span>
+        </a>
+      </div>
+
+      <!-- ================= FREE BREAKDOWN PDFS ================= -->
+      <p class="section-cap rise" id="breakdowns" style="--d:120ms">The Backtest Vault — free PDFs</p>
+      <div class="stack" style="margin-top:14px">
+        <a class="card row rise" style="--d:60ms" href="pdfs/dotoncharts-credit-breakdown.pdf" aria-label="Download the 16 percent breakdown PDF">
+          <div class="thumb pdfbox">PDF</div>
+          <div class="txt">
+            <span class="badge">Comment CREDIT</span>
+            <h2>The 16% Breakdown</h2>
+            <p>Why lenders charge AI companies credit-card interest — the $51B debt tab, receipt by receipt.</p>
+          </div>
+          <span class="chev" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12m0 0 5-5m-5 5-5-5"/><path d="M4 20h16"/></svg>
+          </span>
+        </a>
+
+        <a class="card row rise" style="--d:100ms" href="pdfs/dotoncharts-lab-breakdown.pdf" aria-label="Download the 5,130 backtest report PDF">
+          <div class="thumb pdfbox">PDF</div>
+          <div class="txt">
+            <span class="badge">Comment LAB</span>
+            <h2>We Ran 5,130 Backtests</h2>
+            <p>Doing nothing beat almost everything. The full report — every strategy, every number, every ugly loss.</p>
+          </div>
+          <span class="chev" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12m0 0 5-5m-5 5-5-5"/><path d="M4 20h16"/></svg>
+          </span>
+        </a>
+
+        <a class="card row rise" style="--d:140ms" href="pdfs/dotoncharts-what-breakdown.pdf" aria-label="Download the It's Not HOW, It's WHAT breakdown PDF">
+          <div class="thumb pdfbox">PDF</div>
+          <div class="txt">
+            <span class="badge">Comment WHAT</span>
+            <h2>It's Not HOW. It's WHAT.</h2>
+            <p>The same strategies made money on Apple and bled on Tesla. The asset-selection finding, in full.</p>
+          </div>
+          <span class="chev" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12m0 0 5-5m-5 5-5-5"/><path d="M4 20h16"/></svg>
+          </span>
+        </a>
+
+        <a class="card row rise" style="--d:180ms" href="pdfs/dotoncharts-sleep-breakdown.pdf" aria-label="Download the More Money, Half the Pain breakdown PDF">
+          <div class="thumb pdfbox">PDF</div>
+          <div class="txt">
+            <span class="badge">Comment SLEEP</span>
+            <h2>More Money, Half the Pain</h2>
+            <p>The one strategy family that beat the market did it by sleeping better, not trading more.</p>
+          </div>
+          <span class="chev" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12m0 0 5-5m-5 5-5-5"/><path d="M4 20h16"/></svg>
+          </span>
+        </a>
+
+        <a class="card row rise" style="--d:220ms" href="pdfs/dotoncharts-math-breakdown.pdf" aria-label="Download the 71 percent win rate breakdown PDF">
+          <div class="thumb pdfbox">PDF</div>
+          <div class="txt">
+            <span class="badge">Comment MATH</span>
+            <h2>71% Win Rate. +1.9% Return.</h2>
+            <p>Why win rate is a vanity metric — and the expectancy math that actually decides who survives.</p>
+          </div>
+          <span class="chev" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12m0 0 5-5m-5 5-5-5"/><path d="M4 20h16"/></svg>
+          </span>
+        </a>
+      </div>
+
+      <footer class="rise" style="--d:160ms">
+        <div class="sig">Follow Doton Charts <span class="dot">—</span> we show our work.</div>
+        <p class="fine">Education only — not financial advice. Backtests use historical data; past performance never guarantees future results.</p>
+      </footer>
+    </main>
+
+    <script>
+      (function () {
+        var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        /* entrance reveal — everything settles visible on load, staggered */
+        var items = document.querySelectorAll(".rise");
+        if (reduce) {
+          items.forEach(function (el) { el.classList.add("in"); });
+        } else {
+          requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+              items.forEach(function (el) { el.classList.add("in"); });
+            });
+          });
+          /* belt and braces: nothing stays hidden if a frame is dropped */
+          setTimeout(function () {
+            items.forEach(function (el) { el.classList.add("in"); });
+          }, 900);
+        }
+
+        /* 5,130 count-up */
+        var el = document.getElementById("count");
+        var target = 5130;
+        function fmt(n) { return n.toLocaleString("en-US"); }
+        if (reduce) {
+          el.textContent = fmt(target);
+        } else {
+          var start = null, dur = 1500;
+          function tick(ts) {
+            if (!start) start = ts;
+            var t = Math.min((ts - start) / dur, 1);
+            var eased = 1 - Math.pow(1 - t, 4);
+            el.textContent = fmt(Math.round(target * eased));
+            if (t < 1) requestAnimationFrame(tick);
+          }
+          setTimeout(function () { requestAnimationFrame(tick); }, 350);
+        }
+
+      })();
+    </script>
+  </body>
+</html>
