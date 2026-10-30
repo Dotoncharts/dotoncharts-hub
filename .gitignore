@@ -1,0 +1,23 @@
+# Secrets & credentials — never deploy these to the public site repo
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+credentials*
+*secret*
+*.token
+
+# Agent / internal working files — not site content
+hidden_files/
+*.muse-github-snapshot-sync.json
+*.muse-github-snapshot-sync.json.tmp-*
+
+# OS & editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
